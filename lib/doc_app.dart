@@ -1,3 +1,4 @@
+import 'package:doctor_app_advanced/core/routing/app_routes.dart';
 import 'package:flutter/material.dart';
 
 class DocApp extends StatelessWidget {
@@ -6,7 +7,8 @@ class DocApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false
+      debugShowCheckedModeBanner: false,
+      onGenerateRoute: AppRoutes.generateRoute,
 
     );
   }
