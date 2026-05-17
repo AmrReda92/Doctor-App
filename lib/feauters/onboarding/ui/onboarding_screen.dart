@@ -7,6 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../widgets/doctor_image_and_text.dart';
 import '../widgets/logo_and_name.dart';
 
+import 'package:flutter/material.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
