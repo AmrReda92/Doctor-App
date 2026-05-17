@@ -2,8 +2,11 @@
 class Assets {
   Assets._();
 
+  static const String iconsBackLogo = 'assets/icons/backLogo.svg';
   static const String iconsGroup = 'assets/icons/Group.svg';
   static const String imagesDocPhoto = 'assets/images/docPhoto.png';
+  static const String imagesDocdoc = 'assets/images/Docdoc.png';
+  static const String imagesLogoBackCorrect = 'assets/images/logoBackCorrect.png';
   static const String imagesLogoBackground = 'assets/images/logoBackground.png';
 
 }
