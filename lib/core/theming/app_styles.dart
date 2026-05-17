@@ -12,4 +12,14 @@ class AppStyles {
     fontSize: 32,
     fontWeight: FontWeight.bold
   );
+  static TextStyle font14Grey = TextStyle(
+    color: AppColors.grey,
+    fontSize: 14,
+    fontWeight: FontWeight.normal
+  );
+  static TextStyle font16WhiteSemi = TextStyle(
+    color: Colors.white,
+    fontSize: 16,
+    fontWeight: FontWeight.w600
+  );
 }
