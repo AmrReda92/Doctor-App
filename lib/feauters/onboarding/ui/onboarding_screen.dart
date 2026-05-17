@@ -15,33 +15,35 @@ class OnboardingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          children: [
-            SizedBox(height: 21.h,),
-            const LogoAndName(),
-            SizedBox(height: 30.h,),
-            DoctorImageAndText(),
-            Padding(
-              padding:  EdgeInsets.symmetric(horizontal: 30.w),
-              child: Column(
-                children: [
-                  Text("Manage and schedule all of your medical appointments easily with Docdoc to get a new experience.",
-                    style: AppStyles.font14Grey,textAlign: TextAlign.center,),
-
-                ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(height: 21.h,),
+              const LogoAndName(),
+              SizedBox(height: 30.h,),
+              DoctorImageAndText(),
+              Padding(
+                padding:  EdgeInsets.symmetric(horizontal: 30.w),
+                child: Column(
+                  children: [
+                    Text("Manage and schedule all of your medical appointments easily with Docdoc to get a new experience.",
+                      style: AppStyles.font14Grey,textAlign: TextAlign.center,),
+          
+                  ],
+                ),
               ),
-            ),
-            SizedBox(height: 32.h,),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 30.w),
-              child: CustomElevatedButton(
-                  text: "Get Started",
-                  onPressed: (){
-                    Navigator.pushNamed(context, Routes.loginScreen);
-                  }
-              ),
-            )
-          ],
+              SizedBox(height: 32.h,),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 30.w),
+                child: CustomElevatedButton(
+                    text: "Get Started",
+                    onPressed: (){
+                      Navigator.pushNamed(context, Routes.loginScreen);
+                    }
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
