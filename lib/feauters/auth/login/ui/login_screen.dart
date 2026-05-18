@@ -1,3 +1,4 @@
+import 'package:doctor_app_advanced/core/routing/routes.dart';
 import 'package:doctor_app_advanced/core/shared_widgets/custom_elevated_button.dart';
 import 'package:doctor_app_advanced/core/shared_widgets/custom_text_form_field.dart';
 import 'package:doctor_app_advanced/core/theming/app_styles.dart';
@@ -54,7 +55,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       SizedBox(height: 32.h,),
                       CustomElevatedButton(text: "Login",
-                       onPressed: (){},
+                       onPressed: (){
+                        Navigator.pushNamed(context, Routes.homeScreen);
+                       },
                       )
                     ],
                   ),
