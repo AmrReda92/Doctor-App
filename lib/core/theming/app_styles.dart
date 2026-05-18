@@ -7,6 +7,11 @@ class AppStyles {
     fontSize: 24,
     fontWeight: FontWeight.w700
   );
+  static TextStyle font24Blue = TextStyle(
+    color: AppColors.primaryColor,
+    fontSize: 24,
+    fontWeight: FontWeight.bold
+  );
   static TextStyle font32Blue = TextStyle(
     color: AppColors.primaryColor,
     fontSize: 32,
@@ -14,6 +19,11 @@ class AppStyles {
   );
   static TextStyle font14Grey = TextStyle(
     color: AppColors.grey,
+    fontSize: 14,
+    fontWeight: FontWeight.normal
+  );
+  static TextStyle font14hintText = TextStyle(
+    color: Color(0xffC2C2C2),
     fontSize: 14,
     fontWeight: FontWeight.normal
   );
