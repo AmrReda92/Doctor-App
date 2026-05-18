@@ -11,6 +11,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final formkey = GlobalKey<FormState>();
    bool isObsecureText = true;
   @override
   Widget build(BuildContext context) {
@@ -25,22 +26,25 @@ class _LoginScreenState extends State<LoginScreen> {
                 Text("Welcome Back",style: AppStyles.font24Blue,),
                 SizedBox(height: 8.h,),
                 Text("We're excited to have you back, can't wait to\nsee what you've been up to since you last logged in.",style: AppStyles.font14Grey,),
-                Column(
-                  children: [
-                    SizedBox(height: 30.h,),
-                    CustomTextFormField(hint: Text("Email",),),
-                    SizedBox(height: 16.h,),
-                    CustomTextFormField(hint: Text("Password",),
-                      isObsecureText: isObsecureText,
-                      suffixIcon: GestureDetector(
-                        onTap: (){
-                          setState(() {
-                            isObsecureText=!isObsecureText;
-                          });
-                        },
-                          child: Icon(isObsecureText? Icons.visibility_off : Icons.visibility)),
-                    ),
-                  ],
+                Form(
+                  key: formkey,
+                  child: Column(
+                    children: [
+                      SizedBox(height: 30.h,),
+                      CustomTextFormField(hint: Text("Email",),),
+                      SizedBox(height: 16.h,),
+                      CustomTextFormField(hint: Text("Password",),
+                        isObsecureText: isObsecureText,
+                        suffixIcon: GestureDetector(
+                          onTap: (){
+                            setState(() {
+                              isObsecureText=!isObsecureText;
+                            });
+                          },
+                            child: Icon(isObsecureText? Icons.visibility_off : Icons.visibility)),
+                      ),
+                    ],
+                  ),
                 )
               ],
             ),
