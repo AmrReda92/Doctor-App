@@ -26,7 +26,7 @@ class RegisterRequestModel {
    );
  }
 
- Map<String,dynamic> toJson(){
+  Map<String,dynamic> toJson(){
    return {
      "name":name,
       "email":email,

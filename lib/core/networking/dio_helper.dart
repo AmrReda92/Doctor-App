@@ -8,6 +8,9 @@ class DioHelper{
     dio= Dio(
       BaseOptions(
         baseUrl: ApiConstants.baseUrl,
+        headers: {
+          "Accept": "application/json"
+        },
         receiveDataWhenStatusError: true,
       )
     );
