@@ -1,7 +1,9 @@
+import 'package:doctor_app_advanced/core/helpers/validation_service.dart';
 import 'package:doctor_app_advanced/core/routing/routes.dart';
 import 'package:doctor_app_advanced/core/shared_widgets/custom_elevated_button.dart';
 import 'package:doctor_app_advanced/core/shared_widgets/custom_text_form_field.dart';
 import 'package:doctor_app_advanced/core/theming/app_styles.dart';
+import 'package:doctor_app_advanced/feauters/auth/logic/register/register_cubit.dart';
 import 'package:doctor_app_advanced/feauters/auth/login/widgets/privacy_policy.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -35,15 +37,33 @@ class _LoginScreenState extends State<RegisterScreen> {
                   child: Column(
                     children: [
                       SizedBox(height: 30.h,),
-                      CustomTextFormField(hint: Text("Name",),),
+                      CustomTextFormField(
+                        hint: Text("Name",),
+                        validator: ValidationService.validateName,
+                        controller: RegisterCubit.get(context).nameController,
+                      ),
                       SizedBox(height: 16.h,),
-                      CustomTextFormField(hint: Text("Email",),),
+                      CustomTextFormField(
+                        hint: Text("Email",),
+                        validator: ValidationService.validateEmail,
+                        controller: RegisterCubit.get(context).emailController,
+                      ),
                       SizedBox(height: 16.h,),
-                      CustomTextFormField(hint: Text("Phone",),),
+                      CustomTextFormField(
+                        hint: Text("Phone",),
+                        validator: ValidationService.validatePhoneNumber,
+                        controller: RegisterCubit.get(context).phoneController,
+                      ),
                       SizedBox(height: 16.h,),
-                      CustomTextFormField(hint: Text("Gender",),),
+                      CustomTextFormField(
+                        hint: Text("Gender",),
+                        controller: RegisterCubit.get(context).genderController,
+                      ),
                       SizedBox(height: 16.h,),
-                      CustomTextFormField(hint: Text("Password",),
+                      CustomTextFormField(
+                        hint: Text("Password",),
+                        validator: ValidationService.validatePassword,
+                        controller: RegisterCubit.get(context).passwordController,
                         isObsecureText: isObsecureText,
                         suffixIcon: GestureDetector(
                             onTap: (){
@@ -54,7 +74,15 @@ class _LoginScreenState extends State<RegisterScreen> {
                             child: Icon(isObsecureText? Icons.visibility_off : Icons.visibility)),
                       ),
                       SizedBox(height: 16.h,),
-                      CustomTextFormField(hint: Text("Confirm Password",),
+                      CustomTextFormField(
+                        hint: Text("Confirm Password",),
+                        validator:(v){
+                          return ValidationService.validateConfirmPassword(value:v.toString(),password:
+                          RegisterCubit.get(context)
+                              .passwordController
+                              .text);
+                        } ,
+                        controller: RegisterCubit.get(context).confirmPasswordController,
                         isObsecureText: isObsecureText,
                         suffixIcon: GestureDetector(
                             onTap: (){

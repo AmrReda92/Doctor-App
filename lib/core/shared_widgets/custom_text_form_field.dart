@@ -5,13 +5,17 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomTextFormField extends StatelessWidget {
   final Widget hint ;
+  final String? Function(String?)? validator;
+  final TextEditingController? controller;
   final bool? isObsecureText;
   final Widget? suffixIcon ;
-  const CustomTextFormField({super.key, required this.hint, this.suffixIcon, this.isObsecureText});
+  const CustomTextFormField({super.key, required this.hint, this.suffixIcon, this.isObsecureText, this.controller, this.validator});
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      validator: validator,
+      controller: controller,
       obscureText:isObsecureText?? false,
       decoration: InputDecoration(
         suffixIcon: suffixIcon,
