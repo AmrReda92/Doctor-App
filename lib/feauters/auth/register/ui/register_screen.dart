@@ -68,7 +68,7 @@ class _LoginScreenState extends State<RegisterScreen> {
                       SizedBox(height: 32.h,),
                       CustomElevatedButton(text: "Create Account",
                         onPressed: (){
-                          Navigator.pushNamed(context, Routes.homeScreen);
+                          Navigator.pushNamed(context, Routes.loginScreen);
                         },
                       )
                     ],
