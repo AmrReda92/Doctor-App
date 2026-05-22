@@ -39,7 +39,7 @@ class OnboardingScreen extends StatelessWidget {
                 child: CustomElevatedButton(
                     text: "Get Started",
                     onPressed: (){
-                      Navigator.pushNamed(context, Routes.loginScreen);
+                      Navigator.pushNamed(context, Routes.registerScreen);
                     }
                 ),
               )
