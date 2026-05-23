@@ -4,6 +4,7 @@ import 'package:doctor_app_advanced/core/shared_widgets/custom_elevated_button.d
 import 'package:doctor_app_advanced/core/shared_widgets/custom_text_form_field.dart';
 import 'package:doctor_app_advanced/core/theming/app_styles.dart';
 import 'package:doctor_app_advanced/feauters/auth/logic/register/register_cubit.dart';
+import 'package:doctor_app_advanced/feauters/auth/login/widgets/already_have_account.dart';
 import 'package:doctor_app_advanced/feauters/auth/login/widgets/privacy_policy.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -52,7 +53,7 @@ class _LoginScreenState extends State<RegisterScreen> {
                   },
                   builder: (context, state) {
                     if(state is RegisterLoading){
-                      Center(child: CircularProgressIndicator());
+                      return Center(child: CircularProgressIndicator());
                     }
                     return Form(
                       key: formkey,
@@ -153,9 +154,14 @@ class _LoginScreenState extends State<RegisterScreen> {
                     );
                   },
                 ),
-                SizedBox(height: 50.h),
+                SizedBox(height: 30.h),
                 PrivacyPolicy(),
                 SizedBox(height: 24.h),
+                GestureDetector(
+                    onTap: (){
+                      Navigator.pushNamed(context, Routes.loginScreen);
+                    },
+                    child: AlreadyHaveAccount(text: "log in",))
               ],
             ),
           ),
