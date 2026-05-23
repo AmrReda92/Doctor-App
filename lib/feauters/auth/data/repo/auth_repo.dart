@@ -25,4 +25,25 @@ class AuthRepo {
      return left(e.toString());
     }
   }
+
+
+  Future<Either<String, ResponseUserModel>> login(
+      RegisterRequestModel registerRequestModel,
+      ) async {
+    try{
+      final response = await DioHelper.postData(
+          endPoint: ApiConstants.loginEndPoint,
+          data: registerRequestModel.toJson()
+      );
+
+      ResponseUserModel responseUserModel = ResponseUserModel.fromJson(response.data);
+
+      return right(responseUserModel);
+    } on DioException catch(e){
+      return left(e.response?.data["message"]?? "Something went wrong");
+    }
+    catch(e){
+      return left(e.toString());
+    }
+  }
 }
