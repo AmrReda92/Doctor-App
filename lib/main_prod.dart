@@ -6,7 +6,7 @@ import 'doc_app.dart';
 
 void main() async{
   await ScreenUtil.ensureScreenSize();
-   WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
   await DioHelper.init();
   runApp(const DocApp());
 }
