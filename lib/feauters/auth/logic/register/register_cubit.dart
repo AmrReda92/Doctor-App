@@ -56,5 +56,6 @@ class RegisterCubit extends Cubit<RegisterState> {
 
     return super.close();
   }
+
 }
 
