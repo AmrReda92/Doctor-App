@@ -19,7 +19,7 @@ class AuthRepo {
 
       return right(responseUserModel);
     } on DioException catch(e){
-      return left(e.response!.data["message"]?? "Something went wrong");
+      return left(e.response?.data["message"]?? "Something went wrong");
     }
     catch(e){
      return left(e.toString());
