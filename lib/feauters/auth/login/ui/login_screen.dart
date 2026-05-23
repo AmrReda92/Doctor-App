@@ -92,7 +92,9 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                           ),
                           SizedBox(height: 32.h),
-                          CustomElevatedButton(
+                         state is LoginLoading? Center(
+                            child: CircularProgressIndicator(),
+                          ): CustomElevatedButton(
                             text: "Login",
                             onPressed: () {
                               if (formkey.currentState!.validate()) {
