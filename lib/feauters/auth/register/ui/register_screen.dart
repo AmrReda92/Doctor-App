@@ -52,7 +52,7 @@ class _LoginScreenState extends State<RegisterScreen> {
                   },
                   builder: (context, state) {
                     if(state is RegisterLoading){
-                      Center(child: CircularProgressIndicator());
+                      return Center(child: CircularProgressIndicator());
                     }
                     return Form(
                       key: formkey,
